@@ -5,8 +5,8 @@ import {
     Scope,
     UseGuards
   } from '@nestjs/common';
-  import { paginationOptions } from 'src/helperfunction/PaginationOption';
-  import { userInterface, User } from 'src/Models/user';
+  import { paginationOptions } from '../../helperFunction/PaginationOption';
+  import { userInterface, User } from '../../Models/user';
   import { AddUserDTO, SignInUserDTO } from './user.dto';
   import * as moment from 'moment'
   var jwt = require('jsonwebtoken'); 
