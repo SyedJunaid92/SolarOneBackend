@@ -5,8 +5,8 @@ import {
   Scope,
   UseGuards
 } from '@nestjs/common';
-import { paginationOptions } from 'src/helperfunction/PaginationOption';
-import { productOfInterface,ProductOf } from 'src/Models/productof';
+import { paginationOptions } from '../../helperFunction/PaginationOption';
+import { productOfInterface,ProductOf } from '../../Models/productof';
 import * as moment from 'moment'
 import { AddProductOfDTO, EditProductOfDTO, deleteProductOfDTO, getAllProductOfDTO, getProductOfDTO } from './productOf.dto';
 
