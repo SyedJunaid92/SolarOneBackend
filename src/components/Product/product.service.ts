@@ -8,7 +8,7 @@ import {
 import { paginationOptions } from '../../helperFunction/PaginationOption';
 import { Product, ProductInterface } from '../../Models/product';
 import { addProductDTO, deleteProductDTO, editProductDTO, getAllProductDTO, getProductDTO } from './product.dto';
-import * as moment from 'moment'
+import  moment from 'moment'
 
 @Injectable({ scope: Scope.REQUEST })
 export class ProductService {

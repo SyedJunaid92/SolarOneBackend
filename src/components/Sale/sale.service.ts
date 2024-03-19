@@ -8,7 +8,7 @@ import {
   import { paginationOptions } from '../../helperFunction/PaginationOption';
   import { Sale, salesInterface } from '../../Models/sales';
   import { addSaleDTO, getSalePaginateDTO} from './sale.dto';
-  import * as moment from 'moment'
+  import  moment from 'moment'
 
   
   @Injectable({ scope: Scope.REQUEST })
