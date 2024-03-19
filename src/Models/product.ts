@@ -15,7 +15,8 @@ export class ProductInterface {
   alert:string='';
   created_by:string='';
   picture:string='';
-  description:string=''
+  description:string='';
+  watt:string=""
 
 }
 const productSchema = new mongoose.Schema({
@@ -33,6 +34,9 @@ const productSchema = new mongoose.Schema({
   },
 
   picture: {
+    type: String
+  },
+  watt: {
     type: String
   },
 

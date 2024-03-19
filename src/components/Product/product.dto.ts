@@ -43,13 +43,19 @@ import {
     @IsString()
     cost:string
 
-    @IsNotEmpty()
+    @IsOptional()
     @IsString()
     alert:string
 
     @IsNotEmpty()
     @IsString()
     picture:string
+
+    @IsNotEmpty()
+    @IsString()
+    watt:string
+
+
 
 
 
@@ -131,13 +137,18 @@ import {
     @IsString()
     cost:string
 
-    @IsNotEmpty()
+    @IsOptional()
     @IsString()
     alert:string
 
     @IsNotEmpty()
     @IsString()
     picture:string
+
+    
+    @IsNotEmpty()
+    @IsString()
+    watt:string
 
 
 

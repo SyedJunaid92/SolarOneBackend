@@ -32,7 +32,7 @@ export class ProductOfController {
     }
 
     @Get('/by-paginate')
-    async getAllCustomerByPaginate(@Query() obj:getProductDTO, @Response() res, @Request() req) {
+    async getAllProductOfByPaginate(@Query() obj:getProductDTO, @Response() res, @Request() req) {
      
         const response = await this.productOfService.getAllProductOfPagination(obj);
         return res.status(response.status).json({

@@ -40,7 +40,8 @@ export class ProductService {
         alert: obj.alert ? obj.alert?.trim() : '',
         created_by: obj.email ? obj.email?.trim()?.toLowerCase() : "",
         picture: obj.picture ? obj.picture : '',
-        description: obj.description ? obj.description?.trim() : ''
+        description: obj.description ? obj.description?.trim() : '',
+        watt:obj.watt ? obj.watt?.trim() : ''
       };
 
 
@@ -95,7 +96,8 @@ export class ProductService {
         cost: obj.cost ? obj.cost?.trim() : '',
         alert: obj.alert ? obj.alert?.trim() : '',
         picture: obj.picture ? obj.picture : '',
-        description: obj.description ? obj.description?.trim() : ''
+        description: obj.description ? obj.description?.trim() : '',
+        watt : obj.watt ? obj.watt?.trim() : ""
       };
       await Product.updateOne({ _id: obj._id }, { $set: productToUpdate })
 
