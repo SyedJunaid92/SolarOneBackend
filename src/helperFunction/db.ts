@@ -18,4 +18,4 @@ mongoose.set('strictQuery', true);
       process.exit(1);
     });
 };
-export default connectDB;
+export  {connectDB};

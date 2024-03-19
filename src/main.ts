@@ -5,7 +5,7 @@ import { ValidationPipe } from '@nestjs/common';
 import { join } from 'path'
 import * as dotenv from 'dotenv';
 import * as express from 'express'
-import connectMongoDB  from './helperfunction/db';
+import { connectDB }  from './helperfunction/db';
 
 dotenv.config();
 
@@ -17,7 +17,7 @@ async function bootstrap() {
     cors: true,
   });
 
-  connectMongoDB();
+  connectDB();
   app.use(json({ limit: '500mb' }));
   app.use(urlencoded({ extended: true, limit: '50mb' }));
   app.setGlobalPrefix('api');
