@@ -5,10 +5,11 @@ import { ValidationPipe } from '@nestjs/common';
 import { join } from 'path'
 import * as dotenv from 'dotenv';
 import * as express from 'express'
+import connectMongoDB  from './helperfunction/db';
 
 dotenv.config();
 
-const connectMongoDB = require('./helperfunction/db');
+
 
 async function bootstrap() {
   
