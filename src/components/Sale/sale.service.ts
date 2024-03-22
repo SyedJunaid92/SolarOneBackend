@@ -30,18 +30,7 @@ import {
 
         }
 
-        let temp:any= obj.sale_details
-
-        for(let i =0;i<temp.length;i++)
-        {
-          let find = await Inventory.findOne({product_code:temp[i]?.code, product_of_id:temp[i].product_of_id})
-          if(find)
-          {
-            let updatedQuantity = +find.quantity - +temp[i].qty
-
-            await Inventory.findByIdAndUpdate({_id:find._id},{quantity:updatedQuantity})
-          }
-        }
+        
 
   
   
@@ -75,6 +64,18 @@ import {
             new Date().toString().slice(0, 24),
   
           );
+          let temp:any= obj.sale_details
+
+        for(let i =0;i<temp.length;i++)
+        {
+          let find = await Inventory.findOne({product_code:temp[i]?.code, product_of_id:temp[i].product_of_id})
+          if(find)
+          {
+            let updatedQuantity = +find.quantity - +temp[i].qty
+
+            await Inventory.findByIdAndUpdate({_id:find._id},{quantity:updatedQuantity})
+          }
+        }
   
           return {
             status: 200,
