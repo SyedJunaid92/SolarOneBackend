@@ -7,6 +7,7 @@ import {
   } from '@nestjs/common';
   import { paginationOptions } from '../../helperFunction/PaginationOption';
   import { Sale, salesInterface } from '../../Models/sales';
+  import { Inventory } from '../../Models/inventory';
   import { addSaleDTO, getSalePaginateDTO} from './sale.dto';
   import  moment from 'moment'
 
@@ -27,6 +28,19 @@ import {
                 sale_id = ""
             }
 
+        }
+
+        let temp:any= obj.sale_details
+
+        for(let i =0;i<temp.length;i++)
+        {
+          let find = await Inventory.findOne({product_code:temp[i]?.code, product_of_id:temp[i].product_of_id})
+          if(find)
+          {
+            let updatedQuantity = +find.quantity - +temp[i].qty
+
+            await Inventory.findByIdAndUpdate({_id:find._id},{quantity:updatedQuantity})
+          }
         }
 
   

@@ -2,76 +2,66 @@ import mongoose from 'mongoose';
 import { model, Schema, Model, Document } from 'mongoose';
 var aggregatePaginate = require("mongoose-aggregate-paginate-v2");
 
-export class ProductInterface {
+export class InventoryInterface {
   _id:string='';
-  name:string='';
-  code:string='';
-  company_name:string='';
-  price:string ='';
-  cost:string = '';
+  product_name:string='';
+  product_code:string='';
   creation_time:number=0;
   creation_date:string='';
   status:boolean =true;
-  alert:string='';
   created_by:string='';
-  picture:string='';
-  description:string='';
-  watt:string=""
+  product_picture:string='';
+  product_of_name:string='';
+  product_of_id:string='';
+  quantity:number=0
 
 }
-const productSchema = new mongoose.Schema({
+const inventorySchema = new mongoose.Schema({
   _id: {
     type: String
   },
   creation_time: {
     type: Number
   },
+  quantity: {
+    type: Number
+  },
 
-  name: {
+  product_name: {
     type: String,
     required: true,
     
   },
 
-  picture: {
+  product_picture: {
     type: String
   },
+
   created_by: {
     type: String
   },
-  watt: {
-    type: String
-  },
+  
 
   creation_date: {
     type: String
   },
 
-  code: {
+  product_code: {
+    type: String
+  },
+  product_of_name: {
+    type: String
+  },
+  product_of_id: {
     type: String
   },
 
-  company_name: {
-    type: String
-  },
-  description: {
-    type: String
-  },
-  price: {
-    type: String
-  },
-  cost: {
-    type: String
-  },
-  alert: {
-    type: String
-  },
   status:{
    type:Boolean 
   },
 });
 
-productSchema.plugin(aggregatePaginate);
-export const Product = model('Product', productSchema);
+inventorySchema.plugin(aggregatePaginate);
+export const Inventory = model('inventory', inventorySchema);
 
-module.exports = { Product, ProductInterface };
+module.exports = { Inventory, InventoryInterface };
